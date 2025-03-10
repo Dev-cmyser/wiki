@@ -9,9 +9,9 @@ jobs:
     - uses: hyoo-ru/mam_build@master2
       with:
         token: ${{ secrets.GH_PAT }}
-        package: 'first/wiki'
+        package: 'wiki'
     - uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
       if: github.ref == 'refs/heads/master'
       with:
         repo-token: ${{ secrets.GH_PAT }}
-        site-directory: 'first/wiki/-'
+        site-directory: 'wiki/-'
