@@ -17,22 +17,22 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
+
     steps:
-    
+
     - uses: hyoo-ru/mam_build@master2
       with:
-        package: 'dev-cmyser/wiki' #FIXME namespace of this package
+        package: 'wiki' #FIXME namespace of this package
         modules: 'wiki' #FIXME which modules to build, remove line if only on module at the root
-    
+
     #FIXME remove one of the following
-    
+
     - uses: JS-DevTools/npm-publish@v1
       if: github.ref == 'refs/heads/master'
       with:
         token: ${{ secrets.NPM_AUTH_TOKEN }}
         package: ./wiki/-/package.json #FIXME path to build module
-        
+
     - uses: hyoo-ru/gh-deploy@v4.4.1
       if: github.ref == 'refs/heads/master'
       with:
