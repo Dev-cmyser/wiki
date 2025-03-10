@@ -1,6 +1,6 @@
 namespace $ {
 	$mol_style_define ( $wiki , {
-		color: "red",
+		color: "green",
 		Body:{
 			padding: $mol_gap.blur
 		}

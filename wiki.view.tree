@@ -1,6 +1,8 @@
 $wiki $mol_page
 	title \ My Wiki
+	Store $mol_store_shared
+	Note!id $wiki_note
 	body /
-		<= Text $mol_textarea
+		<= Details $mol_textarea
 			hint \ ha=i what go yiu
-			value?next <=> text?next \
+			value?next <=> details?next \
