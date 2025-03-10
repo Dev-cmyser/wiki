@@ -20,8 +20,7 @@ jobs:
       with:
         package: 'wiki'
 
-
     - uses: hyoo-ru/gh-deploy@v4.4.1
-      if: github.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/main'
       with:
-        folder: 'wiki/-' #FIXME path to build app
+        folder: 'wiki/-'
