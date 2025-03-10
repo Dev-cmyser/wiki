@@ -1,5 +1,5 @@
 namespace $ {
-	$mol_style_define ( $first_wiki , {
+	$mol_style_define ( $wiki  , {
 		color: "red",
 		
 		Body:{

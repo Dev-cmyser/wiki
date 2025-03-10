@@ -1,4 +1,4 @@
-$first_wiki $mol_page
+$wiki  $mol_page
 	title \ My Wiki
 	body /
 		<= Text $mol_textarea
