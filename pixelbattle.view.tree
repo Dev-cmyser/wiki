@@ -1,7 +1,22 @@
-$pixelbattle $mol_book2
-	plugins /
-		<= Theme $mol_theme_auto
-	pages /
-		<= View_page $mol_page
-			tools /
-				<= Lights $mol_lights_toggle
+$pixelbattle $mol_page
+	title \PIXEL BATTLE
+	sub /
+		<= Head $mol_view
+			minimal_height 64
+			dom_name \header
+			sub <= head /
+				<= Title $mol_view
+					dom_name \h1
+					sub <= title_content /
+						<= Logo null
+						<= title
+				<= Tools $mol_view
+					sub <= tools /$mol_theme_auto 
+		<= Body $mol_scroll
+			scroll_top? => body_scroll_top?
+			sub <= body_content /
+				<= Body_content $mol_view
+					sub <= body /$mol_view
+		<= Foot $mol_view
+			dom_name \footer
+			sub <= foot /$mol_view
