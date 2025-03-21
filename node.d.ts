@@ -1907,12 +1907,12 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mol_page__tools_wiki_1 = $mol_type_enforce<
+	type $mol_page__tools_pixelbattle_1 = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_page['tools'] >
 	>
-	export class $wiki extends $mol_book2 {
+	export class $pixelbattle extends $mol_book2 {
 		Theme( ): $mol_theme_auto
 		Lights( ): $mol_lights_toggle
 		View_page( ): $mol_page
@@ -1922,9 +1922,9 @@ declare namespace $ {
 	
 }
 
-//# sourceMappingURL=wiki.view.tree.d.ts.map
+//# sourceMappingURL=pixelbattle.view.tree.d.ts.map
 declare namespace $.$$ {
-    class $wiki extends $.$wiki {
+    class $pixelbattle extends $.$pixelbattle {
     }
 }
 

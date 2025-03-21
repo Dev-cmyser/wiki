@@ -5773,7 +5773,7 @@ var $;
 })($ || ($ = {}));
 
 ;
-	($.$wiki) = class $wiki extends ($.$mol_book2) {
+	($.$pixelbattle) = class $pixelbattle extends ($.$mol_book2) {
 		Theme(){
 			const obj = new this.$.$mol_theme_auto();
 			return obj;
@@ -5794,9 +5794,9 @@ var $;
 			return [(this.View_page())];
 		}
 	};
-	($mol_mem(($.$wiki.prototype), "Theme"));
-	($mol_mem(($.$wiki.prototype), "Lights"));
-	($mol_mem(($.$wiki.prototype), "View_page"));
+	($mol_mem(($.$pixelbattle.prototype), "Theme"));
+	($mol_mem(($.$pixelbattle.prototype), "Lights"));
+	($mol_mem(($.$pixelbattle.prototype), "View_page"));
 
 
 ;
@@ -5828,9 +5828,9 @@ var $;
 (function ($) {
     var $$;
     (function ($$) {
-        class $wiki extends $.$wiki {
+        class $pixelbattle extends $.$pixelbattle {
         }
-        $$.$wiki = $wiki;
+        $$.$pixelbattle = $pixelbattle;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
 
@@ -5839,7 +5839,7 @@ var $;
 var $;
 (function ($) {
     const { per } = $mol_style_unit;
-    $mol_style_define($wiki, {});
+    $mol_style_define($pixelbattle, {});
     $mol_style_define($mol_book2, {
         flex: 'auto',
         display: 'flex',
