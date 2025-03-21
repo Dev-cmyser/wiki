@@ -1,4 +1,4 @@
-$cmyser_wiki $mol_book2
+$wiki $mol_book2
 	plugins /
 		<= Theme $mol_theme_auto
 	pages /
