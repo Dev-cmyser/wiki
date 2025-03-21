@@ -1,4 +1,4 @@
-$pixel-battle $mol_book2
+$pixelbattle $mol_book2
 	plugins /
 		<= Theme $mol_theme_auto
 	pages /

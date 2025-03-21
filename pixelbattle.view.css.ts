@@ -1,7 +1,7 @@
 namespace $ {
     const { per } = $mol_style_unit
 
-    $mol_style_define($pixel - battle, {})
+    $mol_style_define($pixelbattle, {})
     $mol_style_define($mol_book2, {
         flex: 'auto',
         display: 'flex',

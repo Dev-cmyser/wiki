@@ -1,7 +1,7 @@
 {
     "extends": "../tsconfig.json",
     "compilerOptions": {
-        "baseUrl": "../pixel-battle",
+        "baseUrl": "../pixelbattle",
         "moduleResolution": "node",
         "paths": {
             "*": ["../node_modules/*"]
