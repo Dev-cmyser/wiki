@@ -1,3 +1,3 @@
 namespace $.$$ {
-    export class $wiki extends $.$wiki {}
+    export class $pixel-battle extends $.$pixel-battle {}
 }
