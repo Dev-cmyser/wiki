@@ -1,5 +1,5 @@
 /* Pixel: make it a small square with a light border */
-.pixelbattle_pixel {
+.pixelbattle_workspace_board_pixel {
     width: 8px;
     height: 8px;
     border: 1px solid #ccc;
