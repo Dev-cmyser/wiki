@@ -4659,296 +4659,58 @@ var $;
 })($ || ($ = {}));
 
 ;
-	($.$mol_paragraph) = class $mol_paragraph extends ($.$mol_view) {
-		line_height(){
-			return 24;
+	($.$mol_list) = class $mol_list extends ($.$mol_view) {
+		rows(){
+			return [];
 		}
-		letter_width(){
-			return 7;
+		gap_before(){
+			return 0;
 		}
-		width_limit(){
-			return +Infinity;
+		gap_after(){
+			return 0;
 		}
-		row_width(){
+		render_visible_only(){
+			return true;
+		}
+		render_over(){
 			return 0;
 		}
 		sub(){
-			return [(this.title())];
+			return (this.rows());
+		}
+		Empty(){
+			const obj = new this.$.$mol_view();
+			return obj;
+		}
+		Gap_before(){
+			const obj = new this.$.$mol_view();
+			(obj.style) = () => ({"paddingTop": (this.gap_before())});
+			return obj;
+		}
+		Gap_after(){
+			const obj = new this.$.$mol_view();
+			(obj.style) = () => ({"paddingTop": (this.gap_after())});
+			return obj;
+		}
+		view_window(){
+			return [0, 0];
 		}
 	};
-
-
-;
-"use strict";
-
-;
-"use strict";
-var $;
-(function ($) {
-    var $$;
-    (function ($$) {
-        class $mol_paragraph extends $.$mol_paragraph {
-            maximal_width() {
-                let width = 0;
-                const letter = this.letter_width();
-                for (const kid of this.sub()) {
-                    if (!kid)
-                        continue;
-                    if (kid instanceof $mol_view) {
-                        width += kid.maximal_width();
-                    }
-                    else if (typeof kid !== 'object') {
-                        width += String(kid).length * letter;
-                    }
-                }
-                return width;
-            }
-            width_limit() {
-                return this.$.$mol_window.size().width;
-            }
-            minimal_width() {
-                return this.letter_width();
-            }
-            row_width() {
-                return Math.max(Math.min(this.width_limit(), this.maximal_width()), this.letter_width());
-            }
-            minimal_height() {
-                return Math.max(1, Math.ceil(this.maximal_width() / this.row_width())) * this.line_height();
-            }
-        }
-        __decorate([
-            $mol_mem
-        ], $mol_paragraph.prototype, "maximal_width", null);
-        __decorate([
-            $mol_mem
-        ], $mol_paragraph.prototype, "row_width", null);
-        __decorate([
-            $mol_mem
-        ], $mol_paragraph.prototype, "minimal_height", null);
-        $$.$mol_paragraph = $mol_paragraph;
-    })($$ = $.$$ || ($.$$ = {}));
-})($ || ($ = {}));
-
-;
-"use strict";
-var $;
-(function ($) {
-    $mol_style_attach("mol/paragraph/paragraph.view.css", ":where([mol_paragraph]) {\n\tmargin: 0;\n\tmax-width: 100%;\n}\n");
-})($ || ($ = {}));
-
-;
-	($.$mol_filler) = class $mol_filler extends ($.$mol_paragraph) {
-		filler_lines(){
-			return [
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. ", 
-				"Donec a diam lectus. ", 
-				"Sed sit amet ipsum mauris. ", 
-				"Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. ", 
-				"Donec et mollis dolor. ", 
-				"Praesent et diam eget libero egestas mattis sit amet vitae augue. ", 
-				"Nam tincidunt congue enim, ut porta lorem lacinia consectetur. ", 
-				"Donec ut libero sed arcu vehicula ultricies a non tortor. ", 
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. ", 
-				"Aenean ut gravida lorem. ", 
-				"Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. ", 
-				"Pellentesque auctor nisi id magna consequat sagittis. ", 
-				"Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. ", 
-				"Ut convallis libero in urna ultrices accumsan. ", 
-				"Donec sed odio eros. ", 
-				"Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. ", 
-				"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. ", 
-				"In rutrum accumsan ultricies. ", 
-				"Mauris vitae nisi at sem facilisis semper ac in est. ", 
-				"Vivamus fermentum semper porta. ", 
-				"Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. ", 
-				"Maecenas convallis ullamcorper ultricies. ", 
-				"Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. ", 
-				"Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. ", 
-				"Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. ", 
-				"Fusce eget orci a orci congue vestibulum. ", 
-				"Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. ", 
-				"Curabitur venenatis pulvinar tellus gravida ornare. ", 
-				"Sed et erat faucibus nunc euismod ultricies ut id justo. ", 
-				"Nullam cursus suscipit nisi, et ultrices justo sodales nec. ", 
-				"Fusce venenatis facilisis lectus ac semper. ", 
-				"Aliquam at massa ipsum. ", 
-				"Quisque bibendum purus convallis nulla ultrices ultricies. ", 
-				"Nullam aliquam, mi eu aliquam tincidunt, purus velit laoreet tortor, viverra pretium nisi quam vitae mi. ", 
-				"Fusce vel volutpat elit. ", 
-				"Nam sagittis nisi dui. ", 
-				"Suspendisse lectus leo, consectetur in tempor sit amet, placerat quis neque. ", 
-				"Etiam luctus porttitor lorem, sed suscipit est rutrum non. ", 
-				"Curabitur lobortis nisl a enim congue semper. ", 
-				"Aenean commodo ultrices imperdiet. ", 
-				"Vestibulum ut justo vel sapien venenatis tincidunt. ", 
-				"Phasellus eget dolor sit amet ipsum dapibus condimentum vitae quis lectus. ", 
-				"Aliquam ut massa in turpis dapibus convallis. ", 
-				"Praesent elit lacus, vestibulum at malesuada et, ornare et est. ", 
-				"Ut augue nunc, sodales ut euismod non, adipiscing vitae orci. ", 
-				"Mauris ut placerat justo. ", 
-				"Mauris in ultricies enim. ", 
-				"Quisque nec est eleifend nulla ultrices egestas quis ut quam. ", 
-				"Donec sollicitudin lectus a mauris pulvinar id aliquam urna cursus. ", 
-				"Cras quis ligula sem, vel elementum mi. ", 
-				"Phasellus non ullamcorper urna. ", 
-				"Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. ", 
-				"In euismod ultrices facilisis. ", 
-				"Vestibulum porta sapien adipiscing augue congue id pretium lectus molestie. ", 
-				"Proin quis dictum nisl. ", 
-				"Morbi id quam sapien, sed vestibulum sem. ", 
-				"Duis elementum rutrum mauris sed convallis. ", 
-				"Proin vestibulum magna mi. ", 
-				"Aenean tristique hendrerit magna, ac facilisis nulla hendrerit ut. ", 
-				"Sed non tortor sodales quam auctor elementum. ", 
-				"Donec hendrerit nunc eget elit pharetra pulvinar. ", 
-				"Suspendisse id tempus tortor. ", 
-				"Aenean luctus, elit commodo laoreet commodo, justo nisi consequat massa, sed vulputate quam urna quis eros. ", 
-				"Donec vel. ", 
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. ", 
-				"Donec a diam lectus. ", 
-				"Sed sit amet ipsum mauris. ", 
-				"Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. ", 
-				"Donec et mollis dolor. ", 
-				"Praesent et diam eget libero egestas mattis sit amet vitae augue. ", 
-				"Nam tincidunt congue enim, ut porta lorem lacinia consectetur. ", 
-				"Donec ut libero sed arcu vehicula ultricies a non tortor. ", 
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. ", 
-				"Aenean ut gravida lorem. ", 
-				"Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. ", 
-				"Pellentesque auctor nisi id magna consequat sagittis. ", 
-				"Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. ", 
-				"Ut convallis libero in urna ultrices accumsan. ", 
-				"Donec sed odio eros. ", 
-				"Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. ", 
-				"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. ", 
-				"In rutrum accumsan ultricies. ", 
-				"Mauris vitae nisi at sem facilisis semper ac in est. ", 
-				"Vivamus fermentum semper porta. ", 
-				"Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. ", 
-				"Maecenas convallis ullamcorper ultricies. ", 
-				"Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. ", 
-				"Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. ", 
-				"Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. ", 
-				"Fusce eget orci a orci congue vestibulum. ", 
-				"Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. ", 
-				"Curabitur venenatis pulvinar tellus gravida ornare. ", 
-				"Sed et erat faucibus nunc euismod ultricies ut id justo. ", 
-				"Nullam cursus suscipit nisi, et ultrices justo sodales nec. ", 
-				"Fusce venenatis facilisis lectus ac semper. ", 
-				"Aliquam at massa ipsum. ", 
-				"Quisque bibendum purus convallis nulla ultrices ultricies. ", 
-				"Nullam aliquam, mi eu aliquam tincidunt, purus velit laoreet tortor, viverra pretium nisi quam vitae mi. ", 
-				"Fusce vel volutpat elit. ", 
-				"Nam sagittis nisi dui. ", 
-				"Suspendisse lectus leo, consectetur in tempor sit amet, placerat quis neque. ", 
-				"Etiam luctus porttitor lorem, sed suscipit est rutrum non. ", 
-				"Curabitur lobortis nisl a enim congue semper. ", 
-				"Aenean commodo ultrices imperdiet. ", 
-				"Vestibulum ut justo vel sapien venenatis tincidunt. ", 
-				"Phasellus eget dolor sit amet ipsum dapibus condimentum vitae quis lectus. ", 
-				"Aliquam ut massa in turpis dapibus convallis. ", 
-				"Praesent elit lacus, vestibulum at malesuada et, ornare et est. ", 
-				"Ut augue nunc, sodales ut euismod non, adipiscing vitae orci. ", 
-				"Mauris ut placerat justo. ", 
-				"Mauris in ultricies enim. ", 
-				"Quisque nec est eleifend nulla ultrices egestas quis ut quam. ", 
-				"Donec sollicitudin lectus a mauris pulvinar id aliquam urna cursus. ", 
-				"Cras quis ligula sem, vel elementum mi. ", 
-				"Phasellus non ullamcorper urna. ", 
-				"Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. ", 
-				"In euismod ultrices facilisis. ", 
-				"Vestibulum porta sapien adipiscing augue congue id pretium lectus molestie. ", 
-				"Proin quis dictum nisl. ", 
-				"Morbi id quam sapien, sed vestibulum sem. ", 
-				"Duis elementum rutrum mauris sed convallis. ", 
-				"Proin vestibulum magna mi. ", 
-				"Aenean tristique hendrerit magna, ac facilisis nulla hendrerit ut. ", 
-				"Sed non tortor sodales quam auctor elementum. ", 
-				"Donec hendrerit nunc eget elit pharetra pulvinar. ", 
-				"Suspendisse id tempus tortor. ", 
-				"Aenean luctus, elit commodo laoreet commodo, justo nisi consequat massa, sed vulputate quam urna quis eros. ", 
-				"Donec vel. "
-			];
-		}
-		min_symbols(){
-			return 7000;
-		}
-		sub(){
-			return (this.filler_lines());
-		}
-	};
+	($mol_mem(($.$mol_list.prototype), "Empty"));
+	($mol_mem(($.$mol_list.prototype), "Gap_before"));
+	($mol_mem(($.$mol_list.prototype), "Gap_after"));
 
 
 ;
 "use strict";
 var $;
 (function ($) {
-    function $mol_array_lottery(list) {
-        return list[Math.floor(Math.random() * list.length)];
+    let cache = null;
+    function $mol_support_css_overflow_anchor() {
+        return cache ?? (cache = this.$mol_dom_context.CSS?.supports('overflow-anchor:auto') ?? false);
     }
-    $.$mol_array_lottery = $mol_array_lottery;
+    $.$mol_support_css_overflow_anchor = $mol_support_css_overflow_anchor;
 })($ || ($ = {}));
-
-;
-"use strict";
-var $;
-(function ($) {
-    $mol_style_attach("mol/filler/filler.view.css", "[mol_filler] {\n\ttext-align: left;\n\tpadding: var(--mol_gap_text);\n\tflex-shrink: 0;\n}\n");
-})($ || ($ = {}));
-
-;
-"use strict";
-
-;
-"use strict";
-var $;
-(function ($) {
-    var $$;
-    (function ($$) {
-        class $mol_filler extends $.$mol_filler {
-            filler_lines() {
-                const lines = [];
-                let len_cur = 0;
-                while (len_cur < this.min_symbols()) {
-                    const line = this.$.$mol_array_lottery(super.filler_lines());
-                    len_cur += line.length;
-                    lines.push(line);
-                }
-                return lines;
-            }
-        }
-        $$.$mol_filler = $mol_filler;
-    })($$ = $.$$ || ($.$$ = {}));
-})($ || ($ = {}));
-
-;
-	($.$mol_scroll) = class $mol_scroll extends ($.$mol_view) {
-		tabindex(){
-			return -1;
-		}
-		event_scroll(next){
-			if(next !== undefined) return next;
-			return null;
-		}
-		scroll_top(next){
-			if(next !== undefined) return next;
-			return 0;
-		}
-		scroll_left(next){
-			if(next !== undefined) return next;
-			return 0;
-		}
-		attr(){
-			return {...(super.attr()), "tabindex": (this.tabindex())};
-		}
-		event(){
-			return {...(super.event()), "scroll": (next) => (this.event_scroll(next))};
-		}
-	};
-	($mol_mem(($.$mol_scroll.prototype), "event_scroll"));
-	($mol_mem(($.$mol_scroll.prototype), "scroll_top"));
-	($mol_mem(($.$mol_scroll.prototype), "scroll_left"));
-
 
 ;
 "use strict";
@@ -5007,6 +4769,313 @@ var $;
     ], $mol_print, "active", null);
     $.$mol_print = $mol_print;
 })($ || ($ = {}));
+
+;
+"use strict";
+
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $mol_list extends $.$mol_list {
+            sub() {
+                const rows = this.rows();
+                return (rows.length === 0) ? [this.Empty()] : rows;
+            }
+            render_visible_only() {
+                return this.$.$mol_support_css_overflow_anchor();
+            }
+            view_window(next) {
+                const kids = this.sub();
+                if (kids.length < 3)
+                    return [0, kids.length];
+                if (this.$.$mol_print.active())
+                    return [0, kids.length];
+                const rect = this.view_rect();
+                if (next)
+                    return next;
+                let [min, max] = $mol_mem_cached(() => this.view_window()) ?? [0, 0];
+                let max2 = max = Math.min(max, kids.length);
+                let min2 = min = Math.max(0, Math.min(min, max - 1));
+                const anchoring = this.render_visible_only();
+                const window_height = this.$.$mol_window.size().height + 40;
+                const over = Math.ceil(window_height * this.render_over());
+                const limit_top = -over;
+                const limit_bottom = window_height + over;
+                const gap_before = $mol_mem_cached(() => this.gap_before()) ?? 0;
+                const gap_after = $mol_mem_cached(() => this.gap_after()) ?? 0;
+                let top = Math.ceil(rect?.top ?? 0) + gap_before;
+                let bottom = Math.ceil(rect?.bottom ?? 0) - gap_after;
+                if (top <= limit_top && bottom >= limit_bottom) {
+                    return [min2, max2];
+                }
+                if (anchoring && ((bottom < limit_top) || (top > limit_bottom))) {
+                    min = 0;
+                    top = Math.ceil(rect?.top ?? 0);
+                    while (min < (kids.length - 1)) {
+                        const height = kids[min].minimal_height();
+                        if (top + height >= limit_top)
+                            break;
+                        top += height;
+                        ++min;
+                    }
+                    min2 = min;
+                    max2 = max = min;
+                    bottom = top;
+                }
+                let top2 = top;
+                let bottom2 = bottom;
+                if (anchoring && (top < limit_top) && (bottom < limit_bottom) && (max < kids.length)) {
+                    min2 = max;
+                    top2 = bottom;
+                }
+                if ((bottom > limit_bottom) && (top > limit_top) && (min > 0)) {
+                    max2 = min;
+                    bottom2 = top;
+                }
+                while (anchoring && ((top2 > limit_top) && (min2 > 0))) {
+                    --min2;
+                    top2 -= kids[min2].minimal_height();
+                }
+                while (bottom2 < limit_bottom && max2 < kids.length) {
+                    bottom2 += kids[max2].minimal_height();
+                    ++max2;
+                }
+                return [min2, max2];
+            }
+            gap_before() {
+                const skipped = this.sub().slice(0, this.view_window()[0]);
+                return Math.max(0, skipped.reduce((sum, view) => sum + view.minimal_height(), 0));
+            }
+            gap_after() {
+                const skipped = this.sub().slice(this.view_window()[1]);
+                return Math.max(0, skipped.reduce((sum, view) => sum + view.minimal_height(), 0));
+            }
+            sub_visible() {
+                return [
+                    ...this.gap_before() ? [this.Gap_before()] : [],
+                    ...this.sub().slice(...this.view_window()),
+                    ...this.gap_after() ? [this.Gap_after()] : [],
+                ];
+            }
+            minimal_height() {
+                return this.sub().reduce((sum, view) => {
+                    try {
+                        return sum + view.minimal_height();
+                    }
+                    catch (error) {
+                        $mol_fail_log(error);
+                        return sum;
+                    }
+                }, 0);
+            }
+            force_render(path) {
+                const kids = this.rows();
+                const index = kids.findIndex(item => path.has(item));
+                if (index >= 0) {
+                    const win = this.view_window();
+                    if (index < win[0] || index >= win[1]) {
+                        this.view_window([this.render_visible_only() ? index : 0, index + 1]);
+                    }
+                    kids[index].force_render(path);
+                }
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $mol_list.prototype, "sub", null);
+        __decorate([
+            $mol_mem
+        ], $mol_list.prototype, "view_window", null);
+        __decorate([
+            $mol_mem
+        ], $mol_list.prototype, "gap_before", null);
+        __decorate([
+            $mol_mem
+        ], $mol_list.prototype, "gap_after", null);
+        __decorate([
+            $mol_mem
+        ], $mol_list.prototype, "sub_visible", null);
+        __decorate([
+            $mol_mem
+        ], $mol_list.prototype, "minimal_height", null);
+        $$.$mol_list = $mol_list;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mol/list/list.view.css", "[mol_list] {\n\twill-change: contents;\n\tdisplay: flex;\n\tflex-direction: column;\n\tflex-shrink: 0;\n\tmax-width: 100%;\n\t/* display: flex;\n\talign-items: stretch;\n\talign-content: stretch; */\n\ttransition: none;\n\tmin-height: 1.5rem;\n}\n\n[mol_list_gap_before] ,\n[mol_list_gap_after] {\n\tdisplay: block !important;\n\tflex: none;\n\ttransition: none;\n\toverflow-anchor: none;\n}\n");
+})($ || ($ = {}));
+
+;
+	($.$pixelbattle_workspace_board) = class $pixelbattle_workspace_board extends ($.$mol_list) {
+		pixels(){
+			return [];
+		}
+		rows(){
+			return [(this.pixels())];
+		}
+	};
+
+
+;
+	($.$pixelbattle_workspace_board_pixel) = class $pixelbattle_workspace_board_pixel extends ($.$mol_view) {
+		cellStyle(){
+			return "";
+		}
+		toggleColor(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		attr(){
+			return {"style": (this.cellStyle())};
+		}
+		event(){
+			return {"click": (next) => (this.toggleColor(next))};
+		}
+	};
+	($mol_mem(($.$pixelbattle_workspace_board_pixel.prototype), "toggleColor"));
+
+
+;
+"use strict";
+
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $pixelbattle_workspace_board_pixel extends $.$pixelbattle_workspace_board_pixel {
+            id() {
+                return '';
+            }
+            color(next) {
+                const key = `pixel:${this.id()}`;
+                if (next !== undefined) {
+                    $mol_state_local.value(key, next);
+                }
+                const saved = $mol_state_local.value(key);
+                return saved ?? '#FFFFFF';
+            }
+            cellStyle() {
+                const bg = this.color();
+                return `background-color:${bg}; width:8px; height:8px; border:1px solid #ccc;`;
+            }
+            toggleColor(next) {
+                if (next === undefined)
+                    return null;
+                const current = this.color();
+                const newColor = current === '#FFFFFF' ? '#000000' : '#FFFFFF';
+                this.color(newColor);
+                return null;
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $pixelbattle_workspace_board_pixel.prototype, "color", null);
+        $$.$pixelbattle_workspace_board_pixel = $pixelbattle_workspace_board_pixel;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("pixelbattle/workspace/board/pixel/pixel.view.css", "/* Pixel: make it a small square with a light border */\n.pixelbattle_workspace_board_pixel {\n    width: 8px;\n    height: 8px;\n    border: 1px solid #ccc;\n    box-sizing: border-box; /* include border in the element size calculation */\n    display: inline-block; /* ensure pixels are treated as inline-blocks (if not using grid) */\n    cursor: pointer; /* show pointer cursor to indicate clickability */\n}\n\n/* Board: use CSS grid to layout 500 columns of pixels */\n.pixelbattle_workspace_board {\n    display: grid;\n    grid-template-columns: repeat(500, 10px); /* 500 columns, each ~10px (to accommodate pixel size + border) */\n    grid-auto-rows: 10px; /* each row is 10px tall */\n}\n");
+})($ || ($ = {}));
+
+;
+"use strict";
+
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $pixelbattle_workspace_board extends $.$pixelbattle_workspace_board {
+            pixels() {
+                const size = 500;
+                const items = [];
+                for (let y = 0; y < size; y++) {
+                    for (let x = 0; x < size; x++) {
+                        items.push($pixelbattle_workspace_board_pixel.make({
+                            id: () => `${x}_${y}`,
+                        }));
+                    }
+                }
+                return items;
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $pixelbattle_workspace_board.prototype, "pixels", null);
+        $$.$pixelbattle_workspace_board = $pixelbattle_workspace_board;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+
+;
+	($.$pixelbattle_workspace) = class $pixelbattle_workspace extends ($.$mol_view) {
+		Board(){
+			const obj = new this.$.$pixelbattle_workspace_board();
+			return obj;
+		}
+		sub(){
+			return [(this.Board())];
+		}
+	};
+	($mol_mem(($.$pixelbattle_workspace.prototype), "Board"));
+
+
+;
+"use strict";
+
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $pixelbattle_workspace extends $.$pixelbattle_workspace {
+        }
+        $$.$pixelbattle_workspace = $pixelbattle_workspace;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+
+;
+	($.$mol_scroll) = class $mol_scroll extends ($.$mol_view) {
+		tabindex(){
+			return -1;
+		}
+		event_scroll(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		scroll_top(next){
+			if(next !== undefined) return next;
+			return 0;
+		}
+		scroll_left(next){
+			if(next !== undefined) return next;
+			return 0;
+		}
+		attr(){
+			return {...(super.attr()), "tabindex": (this.tabindex())};
+		}
+		event(){
+			return {...(super.event()), "scroll": (next) => (this.event_scroll(next))};
+		}
+	};
+	($mol_mem(($.$mol_scroll.prototype), "event_scroll"));
+	($mol_mem(($.$mol_scroll.prototype), "scroll_top"));
+	($mol_mem(($.$mol_scroll.prototype), "scroll_left"));
+
 
 ;
 "use strict";
@@ -5448,6 +5517,12 @@ var $;
 
 ;
 	($.$pixelbattle) = class $pixelbattle extends ($.$mol_example_large) {
+		hue_deg(){
+			return "deg";
+		}
+		hue_spread_deg(){
+			return "";
+		}
 		Theme(){
 			const obj = new this.$.$mol_theme_auto();
 			return obj;
@@ -5456,8 +5531,8 @@ var $;
 			const obj = new this.$.$mol_lights_toggle();
 			return obj;
 		}
-		Text(){
-			const obj = new this.$.$mol_filler();
+		Workspase(){
+			const obj = new this.$.$pixelbattle_workspace();
 			return obj;
 		}
 		Button_foot(){
@@ -5469,12 +5544,15 @@ var $;
 			const obj = new this.$.$mol_page();
 			(obj.plugins) = () => ([(this.Theme())]);
 			(obj.tools) = () => ([(this.Lights())]);
-			(obj.body) = () => ([(this.Text())]);
+			(obj.body) = () => ([(this.Workspase())]);
 			(obj.foot) = () => ([(this.Button_foot())]);
 			return obj;
 		}
 		title(){
 			return "PIXEL";
+		}
+		style(){
+			return {"--mol_theme_hue": (this.hue_deg()), "--mol_theme_hue_spread": (this.hue_spread_deg())};
 		}
 		sub(){
 			return [(this.Page())];
@@ -5482,7 +5560,7 @@ var $;
 	};
 	($mol_mem(($.$pixelbattle.prototype), "Theme"));
 	($mol_mem(($.$pixelbattle.prototype), "Lights"));
-	($mol_mem(($.$pixelbattle.prototype), "Text"));
+	($mol_mem(($.$pixelbattle.prototype), "Workspase"));
 	($mol_mem(($.$pixelbattle.prototype), "Button_foot"));
 	($mol_mem(($.$pixelbattle.prototype), "Page"));
 
@@ -5731,6 +5809,12 @@ var $;
                     document.documentElement.setAttribute('mol_theme', next);
                 }
                 return document.documentElement.getAttribute('mol_theme') || 'light';
+            }
+            hue_deg() {
+                return 660 + 'deg';
+            }
+            hue_spread_deg() {
+                return 60 + 'deg';
             }
         }
         __decorate([
