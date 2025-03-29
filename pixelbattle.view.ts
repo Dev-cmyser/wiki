@@ -8,5 +8,12 @@ namespace $.$$ {
 			}
 			return document.documentElement.getAttribute('mol_theme') || 'light'
 		}
+		hue_deg() {
+			return 660 + 'deg'
+		}
+
+		hue_spread_deg() {
+			return 60 + 'deg'
+		}
 	}
 }

@@ -9,7 +9,7 @@
 }
 
 /* Board: use CSS grid to layout 500 columns of pixels */
-.pixelbattle_board {
+.pixelbattle_workspace_board {
     display: grid;
     grid-template-columns: repeat(500, 10px); /* 500 columns, each ~10px (to accommodate pixel size + border) */
     grid-auto-rows: 10px; /* each row is 10px tall */
