@@ -1,22 +1,13 @@
-$pixelbattle $mol_page
-	title \PIXEL BATTLE
+$pixelbattle $mol_example_large
+	title \PIXEL
 	sub /
-		<= Head $mol_view
-			minimal_height 64
-			dom_name \header
-			sub <= head /
-				<= Title $mol_view
-					dom_name \h1
-					sub <= title_content /
-						<= Logo null
-						<= title
-				<= Tools $mol_view
-					sub <= tools /$mol_theme_auto 
-		<= Body $mol_scroll
-			scroll_top? => body_scroll_top?
-			sub <= body_content /
-				<= Body_content $mol_view
-					sub <= body /$mol_view
-		<= Foot $mol_view
-			dom_name \footer
-			sub <= foot /$mol_view
+		<= Page $mol_page
+			plugins /
+				<= Theme $mol_theme_auto
+			tools /
+				<= Lights $mol_lights_toggle
+			body /
+				<= Text $mol_filler
+			foot /
+				<= Button_foot $mol_button_minor
+					title \Footer Button
