@@ -1,3 +1,2 @@
-$pixelbattle_workspace_board $mol_list
-	rows /
-		<= pixels /
+$pixelbattle_workspace_board $mol_view
+	sub <= pixels /
