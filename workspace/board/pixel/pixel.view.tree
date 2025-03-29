@@ -1,3 +1,5 @@
 $pixelbattle_workspace_board_pixel $mol_view
-    attr * style <= cellStyle \
-    event * click? <=> toggleColor? null
+	attr *
+		style <= cellStyle \
+	event *
+		click? <=> toggleColor? null
