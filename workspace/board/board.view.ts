@@ -1,9 +1,10 @@
+// Путь: mam/pixelbattle/workspace/board/board.view.ts
 namespace $.$$ {
 	export class $pixelbattle_workspace_board extends $.$pixelbattle_workspace_board {
 		// Локальное хранение идентификатора доски
 		_id: string = ''
 
-		// Метод для получения/записи id
+		// Определяем метод id как функцию (MOLO‑паттерн)
 		id(next?: string): string {
 			if (next !== undefined) this._id = next
 			return this._id || 'unknown'
@@ -23,7 +24,7 @@ namespace $.$$ {
 
 		Pixel(id: string) {
 			return this.$.$pixelbattle_workspace_board_pixel.make({
-				// Передаём id в параметрах компонента
+				// Передаём id как функцию-константу, ожидаемую в MOLO
 				id: $mol_const(id),
 			})
 		}
