@@ -1,0 +1,11 @@
+{
+	"$pixelbattle_meet_form_Visible_hint": "Visibility in menu",
+	"$pixelbattle_meet_form_Descr_hint": "Description",
+	"$pixelbattle_meet_form_Bid_text": "//Constructive feedback makes the world better!// Tell us:\n💗 What did you **like**?\n📌 What could be **improved**?\n🙏 More ideas and **suggestions** for the future?",
+	"$pixelbattle_meet_form_Opinions_hint_dictionary_visible": "Visible only to you",
+	"$pixelbattle_meet_form_Form_hint_dictionary_reply": "Leave your contacts if you expect a reply",
+	"$pixelbattle_meet_form_Form_hint_dictionary_auto": "Saves automatically",
+	"$pixelbattle_meet_form_Form_hint_dictionary_marked": "Supports MarkedText",
+	"$pixelbattle_meet_form_Opinions_title": "Reviews",
+	"$pixelbattle_meet_form_Title_hint": "Meeting title"
+}

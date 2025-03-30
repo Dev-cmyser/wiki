@@ -1,6 +1,4 @@
-name: $pixelbattle
-
-permissions: write-all
+name: $pixelbattle_app
 
 on:
   workflow_dispatch:
@@ -13,14 +11,15 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    
     steps:
-
+    
     - uses: hyoo-ru/mam_build@master2
       with:
-        package: 'pixelbattle'
-
+        package: 'hyoo/survey'
+        modules: 'app'
+    
     - uses: hyoo-ru/gh-deploy@v4.4.1
-      if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/master'
       with:
-        folder: 'pixelbattle/-'
+        folder: 'hyoo/survey/app/-'
