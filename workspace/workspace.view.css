@@ -1,0 +1,13 @@
+.pixelbattle_workspace {
+	/* Сетка или сетка-карточки под список boards */
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	padding: 16px;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.pixelbattle_workspace_create_button {
+	margin: 16px;
+}

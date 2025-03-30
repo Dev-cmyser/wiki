@@ -1,3 +1,8 @@
 $pixelbattle_workspace $mol_view
 	sub /
-		<= Board $pixelbattle_workspace_board
+		<= Boards $mol_view
+			sub <= boards /
+		<= CreateButton $mol_button_major
+			className \pixelbattle_workspace_create_button
+			title \Create New Board
+			event click => createBoard

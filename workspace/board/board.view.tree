@@ -1,2 +1,5 @@
 $pixelbattle_workspace_board $mol_view
-	sub <= pixels /
+	sub /
+		<= Title $mol_text
+			text <= id
+		<= pixels /

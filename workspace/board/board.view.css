@@ -1,0 +1,11 @@
+.pixelbattle_workspace_board {
+	/* Можно оформить каждую доску в виде "карточки" */
+	background: #fff;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+	padding: 8px;
+	text-align: center;
+}
+
+/* Если хотите, чтобы пиксельная сетка была не слишком огромной,
+   можно ограничить размеры контейнера или менять size. */

@@ -1,16 +1,11 @@
-/* Pixel: make it a small square with a light border */
 .pixelbattle_workspace_board_pixel {
-    width: 8px;
-    height: 8px;
-    border: 1px solid #ccc;
-    box-sizing: border-box; /* include border in the element size calculation */
-    display: inline-block; /* ensure pixels are treated as inline-blocks (if not using grid) */
-    cursor: pointer; /* show pointer cursor to indicate clickability */
-}
-
-/* Board: use CSS grid to layout 500 columns of pixels */
-.pixelbattle_workspace_board {
-    display: grid;
-    grid-template-columns: repeat(500, 10px); /* 500 columns, each ~10px (to accommodate pixel size + border) */
-    grid-auto-rows: 10px; /* each row is 10px tall */
+	width: 8px;
+	height: 8px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	display: inline-block;
+	cursor: pointer;
+	/* Убираем лишние отступы */
+	margin: 0;
+	padding: 0;
 }
