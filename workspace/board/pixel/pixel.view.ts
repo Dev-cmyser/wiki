@@ -1,7 +1,15 @@
 namespace $.$$ {
 	export class $pixelbattle_workspace_board_pixel extends $.$pixelbattle_workspace_board_pixel {
+		// Добавляем свойство id для компонента пикселя
+		_id: string = ''
+		id(next?: string): string {
+			if (next !== undefined) this._id = next
+			return this._id
+		}
+
 		@$mol_mem
 		color(next?: string): string {
+			// Теперь this.id() вернёт установленное значение
 			const key = `pixel:${this.id()}`
 			if (next !== undefined) {
 				$mol_state_local.value(key, next)

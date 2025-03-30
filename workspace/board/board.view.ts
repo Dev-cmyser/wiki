@@ -23,6 +23,7 @@ namespace $.$$ {
 
 		Pixel(id: string) {
 			return this.$.$pixelbattle_workspace_board_pixel.make({
+				// Передаём id в параметрах компонента
 				id: $mol_const(id),
 			})
 		}

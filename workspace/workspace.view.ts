@@ -1,4 +1,8 @@
 namespace $.$$ {
+	export interface $pixelbattle_workspace {
+		createBoard: (next?: any) => void
+	}
+
 	export class $pixelbattle_workspace extends $.$pixelbattle_workspace {
 		@$mol_mem
 		board_ids(next?: string[]): string[] {
@@ -20,8 +24,8 @@ namespace $.$$ {
 			return this.board_ids().map(id => this.Board(id))
 		}
 
-		@$mol_action
-		createBoard(next?: any) {
+		// Объявляем createBoard как поле-стрелочную функцию
+		createBoard = (next?: any) => {
 			const new_id = 'board_' + Math.random().toString(36).slice(2)
 			console.log('id', new_id)
 			this.board_ids([...this.board_ids(), new_id])
