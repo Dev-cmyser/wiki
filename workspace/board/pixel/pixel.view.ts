@@ -1,9 +1,5 @@
 namespace $.$$ {
 	export class $pixelbattle_workspace_board_pixel extends $.$pixelbattle_workspace_board_pixel {
-		id(): string {
-			return ''
-		}
-
 		@$mol_mem
 		color(next?: string): string {
 			const key = `pixel:${this.id()}`

@@ -1,13 +1,14 @@
 namespace $.$$ {
 	export class $pixelbattle_workspace_board extends $.$pixelbattle_workspace_board {
-		id(): string {
-			return this.toString() // или хранить реальный id, если нужно
+		// Локальное хранение идентификатора доски
+		_id: string = ''
+
+		// Метод для получения/записи id
+		id(next?: string): string {
+			if (next !== undefined) this._id = next
+			return this._id || 'unknown'
 		}
 
-		/**
-		 * Возвращаем массив пикселей.
-		 * Можно менять size при необходимости (например, 50x50 или 100x100).
-		 */
 		@$mol_mem
 		pixels(): readonly $pixelbattle_workspace_board_pixel[] {
 			const size = 30
