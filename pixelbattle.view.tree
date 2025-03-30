@@ -1,8 +1,5 @@
 $pixelbattle $mol_example_large
 	title \PIXEL
-	style *
-		--mol_theme_hue <= hue_deg \deg
-		--mol_theme_hue_spread <= hue_spread_deg \
 	sub /
 		<= Page $mol_page
 			plugins /
