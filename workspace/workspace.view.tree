@@ -1,3 +1,0 @@
-$pixelbattle_workspace $mol_view
-	sub /
-		<= Board $pixelbattle_workspace_board
